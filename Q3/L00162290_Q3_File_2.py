@@ -1,9 +1,9 @@
 """
-# File:             L00162290_Q3_File_2.py
+# File:             L00162290_Q2_File_1.py
 # Created:          02/11/2021, 09:34
 # Author:           Gonzalo Roo Ponce
 # Student Number:   L00162290
-# Version:          1.0.0
+# Version:          1.0.2
 # Licensing:        GNU
 # Support Contact:  l00162290@student.lyit.ie
 # Comments:         
@@ -16,7 +16,6 @@ def ssh_connection():
     global user_file
     global cmd_file
     global session
-    """ Define session globally as we're using both into the try instance but also to run commands """
 
     try:
         #open(user_file, 'r')
@@ -26,15 +25,11 @@ def ssh_connection():
 
         session = paramiko.SSHClient()
         session.set_missing_host_key_policy(paramiko.AutoAddPolicy)
-        """  this needed to be intended
-        ---> as function ssh_connection was not called
-        ---> and the variable session was needed inside the
-        ---> try instance """
         session.connect(hostname=ip.rstrip("\n"),username=user_name,password=user_password)
     except:
         test = "test"
 
-""" Create file to verify SSH connectivity"""
-ssh_connection() # ---> function needed to be called to incorporate all the information collected """
+#Create file to verify SSH connectivity
+ssh_connection()
 connection = session.invoke_shell()
 session.exec_command("mkdir This;cd This; touch that.txt\n")
