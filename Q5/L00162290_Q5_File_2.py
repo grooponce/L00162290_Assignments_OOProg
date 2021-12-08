@@ -29,10 +29,10 @@ def ssh_connection():
     except:
         test = "test"
 
-# Q5.1 - Install curl #
-ssh_connection()
-connection = session.invoke_shell()
-session.exec_command("sudo apt install curl; J4ef3r34")
+# Q5.1 - Install curl - FAILED#
+#ssh_connection()
+#connection = session.invoke_shell()
+#session.exec_command("sudo apt install curl; J4ef3r34")
 
 
 # Q5.2 - Create folder structure #
